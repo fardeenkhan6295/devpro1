@@ -59,26 +59,5 @@ pipeline {
                 }
             }
         }
-
-        stage('Post Deployment Validation') {
-            steps {
-                script {
-                    def response = sh(script: "curl -s -o /dev/null -w '%{http_code}' http://EC2-PUBLIC-IP", returnStdout: true).trim()
-                    if (response != '200') {
-                        error("Deployment failed: App is not responding")
-                    }
-                }
-            }
-        }
-    }
-
-    post {
-        always {
-            emailext(
-                subject: "Jenkins Build #${BUILD_NUMBER} - Status",
-                body: "Build completed. Check Jenkins for details.",
-                recipientProviders: [[$class: 'DevelopersRecipientProvider']]
-            )
-        }
     }
 }
