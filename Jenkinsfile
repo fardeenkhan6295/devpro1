@@ -5,7 +5,7 @@ pipeline {
         AWS_ACCOUNT_ID = '302263074599'
         AWS_REGION = 'ap-south-1'
         IMAGE_NAME = 'spring-boot-app'
-        ECR_REPO = '302263074599.dkr.ecr.ap-south-1.amazonaws.com/myapp/1'
+        ECR_REPO = 'myapp/1'
 
         // Fetch AWS credentials from Jenkins
         AWS_ACCESS_KEY_ID = credentials('AWS_ACCESS_KEY_ID')
