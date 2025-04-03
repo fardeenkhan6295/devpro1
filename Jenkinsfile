@@ -15,7 +15,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git branch: 'main', url: 'https://github.com/your-repo.git'
+                git branch: 'main', url: 'https://github.com/fardeenkhan6295/devpro1.git'
             }
         }
 
