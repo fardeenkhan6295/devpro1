@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        AWS_ACCOUNT_ID = 'your-aws-account-id'
-        AWS_REGION = 'us-east-1'
+        AWS_ACCOUNT_ID = '302263074599'
+        AWS_REGION = 'ap-south-1'
         IMAGE_NAME = 'your-app-name'
         ECR_REPO = 'your-ecr-repository'
 
