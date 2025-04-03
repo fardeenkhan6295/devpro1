@@ -54,7 +54,6 @@ pipeline {
                         sudo docker stop myapp || true
                         sudo docker rm myapp || true
                         sudo docker run -d --name myapp -p 80:80 $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPO:$BUILD_NUMBER
-                    EOF
                     '''
                 }
             }
