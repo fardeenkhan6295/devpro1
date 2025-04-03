@@ -50,7 +50,7 @@ pipeline {
                 sshagent(['ec2-ssh-key']) {
                     sh '''
                     ssh -o StrictHostKeyChecking=no ubuntu@43.204.236.28 <<EOF
-                        sudo docker pull $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPO:$BUILD_NUMBER
+                        docker pull $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPO:$BUILD_NUMBER
                         sudo docker stop myapp || true
                         sudo docker rm myapp || true
                         sudo docker run -d --name myapp -p 80:80 $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPO:$BUILD_NUMBER
